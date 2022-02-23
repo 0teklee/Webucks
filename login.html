@@ -11,13 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link href="styles/login.css" rel="stylesheet" />
-    <script defer src="js/login.js"></script>
+    <link href="styles/login2.css" rel="stylesheet" />
+    <script defer src="js/login2.js"></script>
+    <script defer src="https://kit.fontawesome.com/37073b019c.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <section class="container">
       <img src="webucksLogo.jpg" alt="logo" />
-      <form>
+      <form class="containLogin" action="./list.html">
         <input
           type="text"
           class="Input id"
@@ -30,11 +31,12 @@
           placeholder="비밀번호"
           maxlength="24"
         />
-      </form>
-      <button class="loginButton"/>
-    <a>로그인</a>
+        <i class="fa-regular fa-eye"></i>
+       <button class="loginButton" disabled = true/>
+          로그인
       </button>
       <a class="searchPw" href="#">비밀번호를 잊으셨나요?</a>
+    </form>
     </section>
   </body>
 </html>
