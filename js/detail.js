@@ -1,7 +1,8 @@
 const likeButton = document.getElementsByTagName("i")[0];
 const commentAdd = document.getElementsByClassName("reviewLog")[0];
 const commentArea = document.getElementsByClassName("commentArea")[0];
-const reviewLikeButton = document.querySelector("#commentArea");
+// const reviewLikeButton = document.querySelector("#commentArea");
+const testControlBtn = commentArea.querySelectorAll(".commentUnit");
 
 likeButton.addEventListener("click", () => {
   if (likeButton.className === "fa-regular fa-heart") {
@@ -44,14 +45,26 @@ commentAdd.addEventListener("keypress", function (input) {
   }
 });
 
-reviewLikeButton.addEventListener("click", function (e) {
-  if (e.target.className.includes("fa-heart")) {
-    if (e.target.className === "fa-regular fa-heart") {
-      e.target.className = "fa-solid fa-heart";
-    } else {
-      e.target.className = "fa-regular fa-heart";
+// reviewLikeButton.addEventListener("click", function (e) {
+//   if (e.target.className.includes("fa-heart")) {
+//     if (e.target.className === "fa-regular fa-heart") {
+//       e.target.className = "fa-solid fa-heart";
+//     } else {
+//       e.target.className = "fa-regular fa-heart";
+//     }
+//   }
+// });
+
+testControlBtn.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    if (e.target.className.includes("fa-heart")) {
+      if (e.target.className === "fa-regular fa-heart") {
+        e.target.className = "fa-solid fa-heart";
+      } else {
+        e.target.className = "fa-regular fa-heart";
+      }
     }
-  }
+  });
 });
 
 reviewLikeButton.addEventListener("click", function (e) {
@@ -61,19 +74,19 @@ reviewLikeButton.addEventListener("click", function (e) {
   return;
 });
 
-// reviewLikeButton2.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     // if (btn.classList.contains("fa")) {
-//     if (btn.className === "fa-regular fa-heart") {
-//       btn.className = "fa-solid fa-heart";
-//       console.log("댓글 라이크 버튼 on");
-//     } else {
-//       btn.className = "fa-regular fa-heart";
-//       console.log("댓글 라이크 버튼 off");
+// }); // 정적으로 한가지 모든 클래스에 이벤트리스너를 추가할 때
+// testControlBtn.forEach((btn) => {
+//   btn.addEventListener("click", function (e) {
+//     if (e.target.className.includes("fa-heart")) {
+//       if (e.target.className === "fa-regular fa-heart") {
+//         e.target.className = "fa-solid fa-heart";
+//       } else {
+//         e.target.className = "fa-regular fa-heart";
+//       }
 //     }
 //   });
-//   //   });
-// }); // 정적으로 한가지 모든 클래스에 이벤트리스너를 추가할 때
+// });
+// 메모리를 덜 차지하긴 한다.
 
 // 문제 1
 // for in 사용하여 하트 버튼을 활성화 시켰지만 첫번째 i 태그만 중복되어 작동되는 점

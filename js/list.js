@@ -1,11 +1,13 @@
-const parentIcon = document.querySelector(".container");
+const iconSelect = document.querySelectorAll("i");
 
-parentIcon.addEventListener("click", function (e) {
-  if (e.target.className.includes("fa-heart")) {
-    if (e.target.className === "fa-regular fa-heart") {
-      e.target.className = "fa-solid fa-heart";
-    } else {
-      e.target.className = "fa-regular fa-heart";
+iconSelect.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    if (e.target.className.includes("fa-heart")) {
+      if (e.target.className === "fa-regular fa-heart") {
+        e.target.className = "fa-solid fa-heart";
+      } else {
+        e.target.className = "fa-regular fa-heart";
+      }
     }
-  }
+  });
 });
